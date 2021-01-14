@@ -1,24 +1,27 @@
 import './App.css';
+import React, { Component } from 'react'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export class App extends Component {
+  
+  changeTilte = () =>{
+    // e.target.innerHTML = "test"
+    document.querySelector("h1").innerHTML = "test"
+  }
+
+  changeParagraphe = () => {
+    document.querySelector("p").innerHTML = "Ceci est un paragraphe changer"
+  }
+
+  render() {
+
+    return (
+      <div>
+        <h1 onClick={this.changeTilte}>Titre</h1>
+        <p id="test">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni dolore quidem minima voluptate asperiores iste ratione ex atque, deserunt delectus dignissimos commodi, architecto dicta eveniet eius neque aliquam? Neque, saepe.</p>
+        <button onClick={this.changeParagraphe}>Modifier le paragraphe</button>
+      </div>
+    )
+  }
 }
 
-export default App;
+export default App
